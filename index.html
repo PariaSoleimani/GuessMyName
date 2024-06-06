@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/output.css" />
+  </head>
+  <body class="h-screen font-sans bg-zinc-900 text-zinc-300">
+    <header
+      class="relative flex flex-col items-center justify-center gap-4 border-b-8 h-2/5 border-b-zinc-300 md:h-1/3 md:flex-row md:gap-0"
+    >
+      <h1 class="text-base text-center md:text-2xl lg:text-4xl">Guess My Number!</h1>
+      <button
+        class="px-2 py-3 text-xs duration-200 rounded-md cursor-pointer again w-fit bg-zinc-300 text-zinc-900 hover:text-zinc-900 md:hidden md:px-3 md:py-5 md:text-base lg:text-xl"
+      >
+        Again!
+      </button>
+      <button
+        class="absolute hidden px-3 py-5 duration-200 rounded-md cursor-pointer again left-5 top-5 w-fit bg-zinc-300 text-zinc-900 hover:text-zinc-900 md:block lg:text-xl"
+      >
+        Again!
+      </button>
+      <span
+        class="absolute bottom-0 px-5 py-3 text-xl text-center -translate-x-1/2 translate-y-1/2 rounded-md number left-1/2 w-fit bg-zinc-300 text-zinc-900 md:px-6 md:py-3 md:text-3xl lg:px-10 lg:py-5 lg:text-6xl"
+      >
+        ?
+      </span>
+    </header>
+
+    <main
+      class="flex flex-col items-center justify-between h-2/3 py-7 md:flex-row md:justify-around md:gap-0 md:py-0"
+    >
+      <section class="flex flex-col items-center gap-4 w-fit md:gap-8">
+        <input
+          type="number"
+          class="w-20 px-3 py-5 text-lg text-center bg-transparent border-4 rounded-md guess border-zinc-300 focus:outline-none md:w-32 md:py-8 md:text-4xl lg:w-48 lg:text-6xl"
+          min="1"
+          max="20"
+        />
+        <p class="text-center text-[10px] md:text-xs lg:text-base">(Between 1 and 20)</p>
+        <button
+          class="px-2 py-3 text-xs duration-200 rounded-md cursor-pointer check w-fit bg-zinc-300 text-zinc-900 hover:text-zinc-900 md:px-3 md:py-5 lg:text-xl"
+        >
+          Check!
+        </button>
+      </section>
+      <section class="max-w-md text-xs md:flex-grow md:text-lg lg:text-2xl">
+        <p class="mb-10 message md:mb-20">Start guessing...</p>
+        <p class="mb-4">💯 Score: <span class="score">20</span></p>
+        <p>🥇 Highscore: <span class="highscore">0</span></p>
+      </section>
+    </main>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
